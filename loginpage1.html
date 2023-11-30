@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body>
+        <header>
+           <!--<h1>Online Mechanic Service</h1>-->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="loginpage1.html">Login</a></li>
+                </ul>
+            </nav>
+            </header>
+    </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Mechanic Services</title>
+    <style>
+
+        
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://imgs.search.brave.com/sECrMpoSe8d58At0qQXTZRRMGeVWQZeVAOc1AXbhS8o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9i/aWtlLXJlcGFpci1z/aG9wXzIzLTIxNDgx/Mzg2MjEuanBnP3Np/emU9NjI2JmV4dD1q/cGc');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease;
+        }
+        .form {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .toggle-form {
+            margin-top: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Mechanic Services</h1>
+        <div class="form" id="login-form">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+            <p class="toggle-form" id="toggle-signup">Don't have an account? Sign Up</p>
+        </div>
+        <div class="form" id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post">
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="tel" name="phone" placeholder="Mobile Number" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
+                <button type="button" onclick="signup()">Sign up</button>
+            </form>
+            <p class="toggle-form" id="toggle-login">Already have an account? Login</p>
+        </div>
+    </div>
+    <script>
+         function login() {
+            // Get input values
+           // var username = document.getElementById('username').value;
+            //var password = document.getElementById('password').value;
+
+            // Example validation (you should implement secure validation)
+            //if (username === 'exampleUser' && password === 'examplePassword')//
+            {
+                alert('Login successful!');
+                // Redirect or perform other actions after successful login
+            } 
+        }
+        function signup() {
+            // Get input values
+           // var username = document.getElementById('username').value;
+            //var password = document.getElementById('password').value;
+
+            // Example validation (you should implement secure validation)
+            //if (username === 'exampleUser' && password === 'examplePassword')//
+            {
+                alert('Sign up successful!');
+                // Redirect or perform other actions after successful login
+            } 
+        }
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const toggleSignup = document.getElementById('toggle-signup');
+        const toggleLogin = document.getElementById('toggle-login');
+
+        toggleSignup.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+
+        toggleLogin.addEventListener('click', () => {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
